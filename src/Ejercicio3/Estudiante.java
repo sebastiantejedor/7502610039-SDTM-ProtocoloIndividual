@@ -22,4 +22,12 @@ public class Estudiante {
         this(nombre, edad);
         this.curso = curso;
     }
+    @Override
+    public String toString() {
+        return "Estudiante{" +
+                "nombre='" + nombre + '\'' +
+                ", edad=" + edad +
+                ", curso='" + curso + '\'' +
+                '}';
+    }
 }
