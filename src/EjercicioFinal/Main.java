@@ -5,34 +5,39 @@ import Ejercicio2.CuentaBancaria;
 import Ejercicio3.Estudiante;
 
 public class Main {
-    static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
-        // Solicitar datos del libro
+        //DATOS DEL LIBRO
         System.out.println("DATOS DEL LIBRO");
+
         System.out.print("Ingrese el título: ");
-        String titulo = scanner.nextLine();
-
+        String titulo = input.nextLine();
         System.out.print("Ingrese el autor: ");
-        String autor = scanner.nextLine();
-
+        String autor = input.nextLine();
         System.out.print("Ingrese el número de páginas: ");
-        int numeroPaginas = scanner.nextInt();
-        scanner.nextLine();
+        int numeroPaginas = input.nextInt();
+        input.nextLine();
 
         Libro libro = new Libro(titulo, autor, numeroPaginas);
 
-        // Solicitar datos de la cuenta bancaria
+        // Otro constructor de Libro
+        Libro libro1 = new Libro(
+                "Cien años de soledad",
+                "Gabriel García Márquez",
+                417
+        );
+
+        // CUENTA BANCARIA
         System.out.println("\nDATOS DE LA CUENTA BANCARIA");
+
         System.out.print("Ingrese el número de cuenta: ");
-        String numeroCuenta = scanner.nextLine();
-
+        String numeroCuenta = input.nextLine();
         System.out.print("Ingrese el tipo de cuenta: ");
-        String tipoCuenta = scanner.nextLine();
-
+        String tipoCuenta = input.nextLine();
         System.out.print("Ingrese el saldo: ");
-        double saldo = scanner.nextDouble();
-        scanner.nextLine();
+        double saldo = input.nextDouble();
+        input.nextLine();
 
         CuentaBancaria cuenta = new CuentaBancaria(
                 numeroCuenta,
@@ -40,17 +45,28 @@ public class Main {
                 tipoCuenta
         );
 
-        // Solicitar datos del estudiante
+        // Otros constructores de CuentaBancaria
+        CuentaBancaria cuenta1 = new CuentaBancaria();
+        CuentaBancaria cuenta2 = new CuentaBancaria(
+                "12345",
+                "Ahorros"
+        );
+        CuentaBancaria cuenta3 = new CuentaBancaria(
+                "67890",
+                500000,
+                "Corriente"
+        );
+
+        // ESTUDIANTE
         System.out.println("\nDATOS DEL ESTUDIANTE");
+
         System.out.print("Ingrese el nombre: ");
-        String nombre = scanner.nextLine();
-
+        String nombre = input.nextLine();
         System.out.print("Ingrese la edad: ");
-        int edad = scanner.nextInt();
-        scanner.nextLine();
-
+        int edad = input.nextInt();
+        input.nextLine();
         System.out.print("Ingrese el curso: ");
-        String curso = scanner.nextLine();
+        String curso = input.nextLine();
 
         Estudiante estudiante = new Estudiante(
                 nombre,
@@ -58,8 +74,21 @@ public class Main {
                 curso
         );
 
-        // Mostrar la información ingresada
+        // Otros constructores de Estudiante
+        Estudiante estudiante1 = new Estudiante();
+        Estudiante estudiante2 = new Estudiante(
+                "Sebas",
+                17
+        );
+        Estudiante estudiante3 = new Estudiante(
+                "Sebas",
+                17,
+                "Programación"
+        );
+
+        // Mostrar información ingresada
         System.out.println("\nINFORMACIÓN INGRESADA");
+
         System.out.println("\nLibro:");
         System.out.println(libro.toString());
 
@@ -69,6 +98,6 @@ public class Main {
         System.out.println("\nEstudiante:");
         System.out.println(estudiante.toString());
 
-        scanner.close();
+        input.close();
     }
 }
