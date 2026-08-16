@@ -23,4 +23,12 @@ public class Libro {
         System.out.println("Autor: " + autor);
         System.out.println("Número de páginas: " + NumerodePaginas);
     }
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "titulo='" + titulo + '\'' +
+                ", autor='" + autor + '\'' +
+                ", numeroPaginas=" + NumerodePaginas +
+                '}';
+    }
 }
